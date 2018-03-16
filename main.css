@@ -9,7 +9,27 @@ body {
   color: white;
 }
 
+ul {
+  list-style: none;
+}
+
 .Logo-Nav img {
   width: 300px;
+  height: auto;
+}
+
+.scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-item {
+  flex: 0 0 auto;
+}
+
+.movie {
+  width: 250px;
   height: auto;
 }

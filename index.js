@@ -9,13 +9,26 @@ function getMarvelMovieData(callback) {
 
 function renderMovies(result) {
   return `<li>
-      <img src="https://image.tmdb.org/t/p/w500/${result.poster_path}" alt="${result.original_title}">
+      <img class="movie scroll-item" src="https://image.tmdb.org/t/p/w500/${result.poster_path}" alt="${result.original_title}">
   </li>
   `
 }
 
 function marvelMovieData(data) {
-  const results = data.results.map((result) => renderMovies(result));
+  const results = data.results.sort(function(a,b){
+
+    const nameA = a.original_title.toUpperCase();
+    const nameB = b.original_title.toUpperCase();
+
+    if(nameA < nameB) {
+      return -1;
+    }
+    if(nameA > nameB) {
+      return 1;
+    }
+    return 0
+  }).map((result) => renderMovies(result));
+
   $('.movie-list').html(results);
 }
 
