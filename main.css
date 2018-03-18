@@ -33,3 +33,7 @@ ul {
   width: 250px;
   height: auto;
 }
+
+.movie:hover {
+  cursor:pointer;
+}
