@@ -82,7 +82,7 @@ function getCharacters(data) {
 
   const getAliasData = cleanCharacterNames.map(character => getMarvelCharacterData(character,marvelCharacterData));
 
-  console.log(getAliasData);
+  return getAliasData;
 
 
 }
@@ -100,7 +100,6 @@ function submitTestForm() {
 
 function marvelCharacterData(data) {
   const result = data.data.results[0];
-  console.log(result);
   return result;
 }
 
