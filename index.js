@@ -1,5 +1,5 @@
 const TMDB_SEARCH_URL = "https://api.themoviedb.org/3/";
-const MARVEL_SEARCH_URL = "https://gateway.marvel.com/";
+const MARVEL_SEARCH_URL = "http://gateway.marvel.com/v1/public/";
 const marvelPubAPIKey = "2e2ad108fb363522f64a52b0e8bc6dd4";
 const marvelPrivAPIKey = "6ef753df94be40a08951d117906a8bf0316b2753";
 const timestamp = Date.now();
@@ -20,10 +20,8 @@ function getCharacterData(movieId,callback) {
 function getMarvelCharacterData(character,callback) {
   const URL = `${MARVEL_SEARCH_URL}/characters/`;
   const searchQuery = {
-    name: character,
-    //ts: timestamp,
-    //hash: hash,
-    apiKey: marvelPubAPIKey
+    apiKey: marvelPubAPIKey,
+    name: character
   };
   .getJSON(URL,searchQuery,callback);
 }
