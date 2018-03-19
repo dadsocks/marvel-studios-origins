@@ -21,8 +21,8 @@ function getMarvelCharacterData(character,callback) {
   const URL = `${MARVEL_SEARCH_URL}/characters/`;
   const searchQuery = {
     name: character,
-    ts: timestamp,
-    hash: hash,
+    //ts: timestamp,
+    //hash: hash,
     apiKey: marvelPubAPIKey
   };
   .getJSON(URL,searchQuery,callback);
