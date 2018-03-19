@@ -21,7 +21,7 @@ function getCharacterData(movieId,callback) {
 function getMarvelCharacterData(character,callback) {
 
 
-  .getJSON(MARVEL_SEARCH_URL,
+  $.getJSON(MARVEL_SEARCH_URL,
     {name: character,
       apikey: "2e2ad108fb363522f64a52b0e8bc6dd4",
     },
