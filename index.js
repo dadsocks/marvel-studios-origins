@@ -22,8 +22,10 @@ function getMarvelCharacterData(character,callback) {
 
 
   $.getJSON(MARVEL_SEARCH_URL,
-    {name: character,
-      apikey: "2e2ad108fb363522f64a52b0e8bc6dd4",
+    {nameStartsWith: character,
+      ts: timestamp,
+      apikey: marvelPubAPIKey,
+      hash: hash
     },
     callback);
 }
