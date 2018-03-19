@@ -79,6 +79,12 @@ function getCharacters(data) {
     }
     return name;
   });
+
+  const getAliasData = cleanCharacterNames.map(character => getMarvelCharacterData(character,marvelCharacterData));
+
+  console.log(getAliasData);
+
+
 }
 
 function submitTestForm() {
@@ -93,7 +99,8 @@ function submitTestForm() {
 }
 
 function marvelCharacterData(data) {
-  console.log(data);
+  const result = data.data.results[0];
+  console.log(result);
 }
 
 function selectMovie() {
