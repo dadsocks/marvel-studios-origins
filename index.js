@@ -3,7 +3,8 @@ const MARVEL_SEARCH_URL = "http://gateway.marvel.com/v1/public/";
 const marvelPubAPIKey = "2e2ad108fb363522f64a52b0e8bc6dd4";
 const marvelPrivAPIKey = "6ef753df94be40a08951d117906a8bf0316b2753";
 const timestamp = Date.now();
-const hash = $.md5(timestamp + marvelPrivAPIKey + marvelPubAPIKey);
+const hashString = timestamp + marvelPrivAPIKey + marvelPubAPIKey;
+const hash = MD5(hashString);
 
 function getMarvelMovieData(callback) {
   const companyMoviesUrl = `${TMDB_SEARCH_URL}company/420/movies?api_key=a6f231ffb0d29fd46f9500b4b138e82c&language=en-US`;
@@ -18,12 +19,13 @@ function getCharacterData(movieId,callback) {
 }
 
 function getMarvelCharacterData(character,callback) {
-  const URL = `${MARVEL_SEARCH_URL}/characters/`;
-  const searchQuery = {
-    apiKey: marvelPubAPIKey,
-    name: character
-  };
-  .getJSON(URL,searchQuery,callback);
+  const URL = `${MARVEL_SEARCH_URL}characters`;
+
+  .getJSON(URL,
+    {name: character,
+      apikey: "2e2ad108fb363522f64a52b0e8bc6dd4",
+    },
+    callback);
 }
 
 
