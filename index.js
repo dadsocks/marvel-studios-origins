@@ -101,6 +101,7 @@ function submitTestForm() {
 function marvelCharacterData(data) {
   const result = data.data.results[0];
   console.log(result);
+  return result;
 }
 
 function selectMovie() {
