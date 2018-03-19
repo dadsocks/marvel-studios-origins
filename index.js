@@ -1,4 +1,9 @@
 const TMDB_SEARCH_URL = "https://api.themoviedb.org/3/";
+const MARVEL_SEARCH_URL = "https://gateway.marvel.com/";
+const marvelPubAPIKey = "2e2ad108fb363522f64a52b0e8bc6dd4";
+const marvelPrivAPIKey = "6ef753df94be40a08951d117906a8bf0316b2753";
+const timestamp = Date.now();
+const hash = $.md5(timestamp + marvelPrivAPIKey + marvelPubAPIKey);
 
 function getMarvelMovieData(callback) {
   const companyMoviesUrl = `${TMDB_SEARCH_URL}company/420/movies?api_key=a6f231ffb0d29fd46f9500b4b138e82c&language=en-US`;
@@ -10,6 +15,17 @@ function getCharacterData(movieId,callback) {
   const charactersUrl = `${TMDB_SEARCH_URL}movie/${movieId}/credits?api_key=a6f231ffb0d29fd46f9500b4b138e82c&language=en-US`;
 
   $.getJSON(charactersUrl,callback);
+}
+
+function getMarvelCharacterData(character,callback) {
+  const URL = `${MARVEL_SEARCH_URL}/characters/`;
+  const searchQuery = {
+    name: character,
+    ts: timestamp,
+    hash: hash,
+    apiKey: marvelPubAPIKey
+  };
+  .getJSON(URL,searchQuery,callback);
 }
 
 
@@ -61,12 +77,21 @@ function getCharacters(data) {
     }
     return name;
   });
-  console.log(cleanCharacterNames);
+}
 
-  //run function to query MarvelAPI forEach cleanCharacterName
+function submitTestForm() {
+  $(".test-form").submit(event => {
+    event.preventDefault();
+    const searchQuery = $(event.currentTarget).find(".test-value");
+    const query = searchQuery.val();
+    console.log(query);
+    searchQuery.val("");
+    getMarvelCharacterData(query,marvelCharacterData);
+  });
+}
 
-  //run function to append HTML to DOM
-
+function marvelCharacterData(data) {
+  console.log(data);
 }
 
 function selectMovie() {
@@ -80,6 +105,7 @@ function selectMovie() {
 function renderPage() {
   getMarvelMovieData(marvelMovieData);
   selectMovie();
+  submitTestForm();
 }
 
 $(renderPage);
