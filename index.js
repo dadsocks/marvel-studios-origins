@@ -81,7 +81,7 @@ function getCharacters(data) {
   });
 
   const getAliasData = cleanCharacterNames.map(character => getMarvelCharacterData(character,marvelCharacterData));
-
+  console.log(getAliasData);
   return getAliasData;
 
 
