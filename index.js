@@ -88,6 +88,7 @@ function getCharacters(data) {
 function marvelCharacterData(data) {
   const result = data.data.results[0];
   console.log(result.id);
+  return result;
 }
 
 function selectMovie() {
