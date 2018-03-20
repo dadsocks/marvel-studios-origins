@@ -82,7 +82,8 @@ function getCharacters(data) {
 
   const getAliasData = cleanCharacterNames.map(character => getMarvelCharacterData(character,marvelCharacterData));
   console.log(getAliasData);
-  return getAliasData;
+
+  $('.characters').html(getAliasData);
 
 
 }
@@ -100,7 +101,12 @@ function submitTestForm() {
 
 function marvelCharacterData(data) {
   const result = data.data.results[0];
-  return result;
+  return `
+    <figure class="${result.id} character-image">
+      <img src="`${result.thumbnail.path}portrait_uncanny${result.thumbnail.extension}`" alt="${result.name}">
+      <figcaption>${result.name}</figcaption>
+    </figure>
+  `
 }
 
 function selectMovie() {
