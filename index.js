@@ -36,7 +36,7 @@ function renderMovies(result) {
             <a href="#" id="${result.id}" class="moviePoster">
               <img class="movie scroll-item" src="https://image.tmdb.org/t/p/w500/${result.poster_path}" alt="${result.original_title}">
             </a>
-          </li>`
+          </li>`;
 }
 
 function marvelMovieData(data) {
@@ -83,30 +83,11 @@ function getCharacters(data) {
   const getAliasData = cleanCharacterNames.map(character => getMarvelCharacterData(character,marvelCharacterData));
   console.log(getAliasData);
 
-  $('.characters').html(getAliasData);
-
-
-}
-
-function submitTestForm() {
-  $(".test-form").submit(event => {
-    event.preventDefault();
-    const searchQuery = $(event.currentTarget).find(".test-value");
-    const query = searchQuery.val();
-    console.log(query);
-    searchQuery.val("");
-    getMarvelCharacterData(query,marvelCharacterData);
-  });
 }
 
 function marvelCharacterData(data) {
   const result = data.data.results[0];
-  return `
-    <figure class="${result.id} character-image">
-      <img src="`${result.thumbnail.path}portrait_uncanny${result.thumbnail.extension}`" alt="${result.name}">
-      <figcaption>${result.name}</figcaption>
-    </figure>
-  `
+  console.log(result.id);
 }
 
 function selectMovie() {
@@ -120,7 +101,6 @@ function selectMovie() {
 function renderPage() {
   getMarvelMovieData(marvelMovieData);
   selectMovie();
-  submitTestForm();
 }
 
 $(renderPage);
