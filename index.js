@@ -80,6 +80,7 @@ function getCharacters(data) {
     return name;
   });
 //map through array of cleaned up character names to pull data from Marvel api for each character in array
+  console.log(cleanCharacterNames);
   useCleanCharacterNames(cleanCharacterNames);
 
 }
