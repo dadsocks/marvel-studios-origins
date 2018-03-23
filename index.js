@@ -79,15 +79,32 @@ function getCharacters(data) {
     }
     return name;
   });
-
-  const getAliasData = cleanCharacterNames.map(character => getMarvelCharacterData(character,marvelCharacterData));
-  console.log(getAliasData);
+//map through array of cleaned up character names to pull data from Marvel api for each character in array
+  useCleanCharacterNames(cleanCharacterNames);
 
 }
 
-function marvelCharacterData(data) {
+function useCleanCharacterNames(characters) {
+
+  const marvelCharacterJSON = [];
+  let count = 0;
+
+  characters.forEach(function(character) {
+    getMarvelCharacterData(character,function(data) {
+      marvelCharacterData(data,function(data) {
+        marvelCharacterJSON.push(data);
+        count ++;
+        if (count === marvelCharacterJSON.length) {
+          console.log(marvelCharacterJSON);
+        }
+      });
+    });
+  });
+}
+
+function marvelCharacterData(data,callback) {
   const result = data.data.results[0];
-  $(".characters").html(result);
+  callback(result);
 }
 
 function selectMovie() {
