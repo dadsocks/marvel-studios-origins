@@ -94,6 +94,7 @@ function useCleanCharacterNames(characters) {
       marvelCharacterData(data,function(data) {
         marvelCharacterJSON.push(data);
         count ++;
+        console.log(count);
         if (count === marvelCharacterJSON.length) {
           console.log(marvelCharacterJSON);
         }
