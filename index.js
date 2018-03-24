@@ -132,7 +132,7 @@ function marvelCharacterData(data,callback) {
 }
 
 function renderCharacterBio(data) {
-  const result = data.data.results;
+  const result = data.data.results[0];
 
   charHTML = `
   <div class="character-bio-img">
