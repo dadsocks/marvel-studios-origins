@@ -106,7 +106,18 @@ function useCleanCharacterNames(characters) {
 
 function marvelCharacterData(data,callback) {
   const result = data.data.results[0];
-  callback(result);
+  const characterHTML = `
+    <li>
+      <a href="#" id="${result.id}">
+        <figure>
+          <img src="${result.thumbnail.path}/portrait_uncanny${result.thumbnail.extension}" class="character scroll-item" alt="${result.name}">
+          <figcaption>${result.name}</figcaption>
+        </figure>
+      </a>
+    </li>
+  `
+
+  callback(characterHTML);
 }
 
 function selectMovie() {
