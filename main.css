@@ -37,3 +37,14 @@ ul {
 .movie:hover {
   cursor:pointer;
 }
+
+.character {
+  width: 250px;
+  height: auto;
+}
+
+figcaption {
+  color:inherit;
+  text-decoration: none;
+  font-family: 'Anton', sans-serif;
+}
