@@ -20,7 +20,6 @@ function getCharacterData(movieId,callback) {
 
 function getMarvelCharacterData(character,callback) {
 
-
   $.getJSON(MARVEL_SEARCH_URL,
     {nameStartsWith: character,
       ts: timestamp,
@@ -28,6 +27,18 @@ function getMarvelCharacterData(character,callback) {
       hash: hash
     },
     callback);
+}
+
+function getCharacterDataByID(characterID, callback) {
+  const characterURL = `${MARVEL_SEARCH_URL}/${characterID}`;
+
+  const searchQuery = {
+    ts: timestamp,
+    apikey: marvelPubAPIKey,
+    hash: hash;
+  };
+
+  $.getJSON(characterURL,searchQuery,callback);
 }
 
 
@@ -108,7 +119,7 @@ function marvelCharacterData(data,callback) {
   const result = data.data.results[0];
   const characterHTML = `
     <li>
-      <a href="#" id="${result.id}">
+      <a href="#" id="${result.id}" class="character-img">
         <figure>
           <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character scroll-item" alt="${result.name}">
           <figcaption>${result.name}</figcaption>
@@ -120,6 +131,35 @@ function marvelCharacterData(data,callback) {
   callback(characterHTML);
 }
 
+function renderCharacterBio(data) {
+  const result = data.data.results;
+
+  charHTML = `
+  <div class="character-bio-img">
+    <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character" alt="Thor">
+  </div>
+  <div class="character-bio-content col">
+    <h3 class="bio-name">${result.name}</h3>
+    <section>
+      <p>
+        <h4 class="bio-header">Bio:</h4>
+        ${result.description}
+      </p>
+    </section>
+    <section>
+      <h4 class="bio-header">Comic Book Stats:</h4>
+      <ul>
+        <li>Series: ${result.series.available}</li>
+        <li>Comic Book: ${result.comics.available}</li>
+        <li>Stories: ${result.stories.available}</li>
+        <li>Events: ${result.events.available}</li>
+      </ul>
+    </section>
+  </div>
+  `
+  $('.character-bio').html(charHTML);
+}
+
 function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
@@ -127,10 +167,18 @@ function selectMovie() {
   });
 }
 
+function selectCharacter() {
+  $('.character-list').on('click','.character-img', event => {
+    const charID = $(event.currentTarget).attr('id');
+    getCharacterDataByID(charID,)
+  })
+}
+
 
 function renderPage() {
   getMarvelMovieData(marvelMovieData);
   selectMovie();
+  selectCharacter();
 }
 
 $(renderPage);
