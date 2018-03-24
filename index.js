@@ -97,7 +97,7 @@ function useCleanCharacterNames(characters) {
         count ++;
         console.log(count);
         if (count === marvelCharacterJSON.length) {
-          console.log(marvelCharacterJSON);
+          $(".character-list").html(marvelCharacterJSON);
         }
       });
     });
@@ -110,7 +110,7 @@ function marvelCharacterData(data,callback) {
     <li>
       <a href="#" id="${result.id}">
         <figure>
-          <img src="${result.thumbnail.path}/portrait_uncanny${result.thumbnail.extension}" class="character scroll-item" alt="${result.name}">
+          <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character scroll-item" alt="${result.name}">
           <figcaption>${result.name}</figcaption>
         </figure>
       </a>
