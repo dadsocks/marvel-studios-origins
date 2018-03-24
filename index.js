@@ -35,7 +35,7 @@ function getCharacterDataByID(characterID, callback) {
   const searchQuery = {
     ts: timestamp,
     apikey: marvelPubAPIKey,
-    hash: hash;
+    hash: hash
   };
 
   $.getJSON(characterURL,searchQuery,callback);
