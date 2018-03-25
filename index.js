@@ -177,6 +177,7 @@ function renderCharacterBio(data) {
 function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
+    $(".character-bio").prop('hidden',true);
     getCharacterData(movieID,getCharacters);
   });
 }
@@ -184,7 +185,6 @@ function selectMovie() {
 function selectCharacter() {
   $('.character-list').on('click','.character-img', event => {
     const charID = $(event.currentTarget).attr('id');
-    $(".character-bio").prop('hidden',true);
     getCharacterDataByID(charID,renderCharacterBio);
   })
 }
