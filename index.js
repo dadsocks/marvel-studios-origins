@@ -87,6 +87,9 @@ function getCharacters(data) {
     } else if(name.includes('Thor')) {
       let alias = name.split(' ');
       return alias[0];
+    } else if(name.includes('aka')) {
+      let alias = name.split('aka ');
+      return alias[alias.length - 1];
     }
     return name;
   });
@@ -134,6 +137,10 @@ function marvelCharacterData(data,callback) {
 function renderCharacterBio(data) {
   const result = data.data.results[0];
 
+  let bio = result.description;
+
+  const bioCheck = (bio) => {if(bio == ''){bio = "No Bio Available"}};
+
   charHTML = `
   <div class="character-bio-img">
     <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character" alt="Thor">
@@ -143,7 +150,7 @@ function renderCharacterBio(data) {
     <section>
       <p>
         <h4 class="bio-header">Bio:</h4>
-        ${result.description}
+        ${bio}
       </p>
     </section>
     <section>
