@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="main.css" type="text/css">
   <title>Marvel Studios Origins</title>
 </head>
-<body>
-  <header>
+<body role="document">
+  <header role="banner">
     <div class="Logo-Nav">
       <img src="https://goo.gl/vNsMnj" alt="Marvel Studios Logo">
     </div>
@@ -20,13 +20,11 @@
       <ul class="movie-list scroll"></ul>
     </div>
   </header>
-  <main>
-    <section class="characters"></section>
+  <main role="main" hidden>
+    <section class="characters" aria-live="assertive" hidden></section>
       <ul class="character-list scroll"></ul>
-    <section class="characters">
-
     </section>
-    <section class="character-bio"></section>
+    <section class="character-bio" aria-live="assertive" hidden></section>
   </main>
 </body>
 </html>

@@ -111,6 +111,8 @@ function useCleanCharacterNames(characters) {
         count ++;
         console.log(count);
         if (count === marvelCharacterJSON.length) {
+          $("main").prop('hidden',false);
+          $(".character-list").prop('hidden',false);
           $(".character-list").html(marvelCharacterJSON);
         }
       });
@@ -164,6 +166,7 @@ function renderCharacterBio(data) {
     </section>
   </div>
   `
+  $(".character-bio").prop('hidden',false);
   $('.character-bio').html(charHTML);
 }
 
@@ -177,6 +180,7 @@ function selectMovie() {
 function selectCharacter() {
   $('.character-list').on('click','.character-img', event => {
     const charID = $(event.currentTarget).attr('id');
+    $(".character-bio").prop('hidden',true);
     getCharacterDataByID(charID,renderCharacterBio);
   })
 }
