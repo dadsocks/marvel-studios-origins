@@ -139,7 +139,7 @@ function renderCharacterBio(data) {
 
   let bio = result.description;
 
-  const bioCheck = (bio) => {if(bio == ''){return = "No Bio Available"}};
+  const bioCheck = (bio) => {if(bio == ''){return "No Bio Available"};}
 
   charHTML = `
   <div class="character-bio-img">
