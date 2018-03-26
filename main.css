@@ -18,10 +18,6 @@ a {
   text-decoration: none;
 }
 
-.hide {
-  display: none;
-}
-
 .Logo-Nav img {
   width: 300px;
   height: auto;
@@ -89,4 +85,8 @@ figcaption {
 
 .character-bio-content section {
   margin-bottom: 20px;
+}
+
+.hide {
+  display: none;
 }
