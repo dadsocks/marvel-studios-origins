@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+.hide {
+  display: none;
+}
+
 .Logo-Nav img {
   width: 300px;
   height: auto;
