@@ -179,7 +179,7 @@ function renderCharacterBio(data) {
 function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
-    $("character-info").addClass("hide");
+    $(".character-info").addClass("hide");
     getCharacterData(movieID,getCharacters);
   });
 }
