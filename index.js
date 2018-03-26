@@ -172,14 +172,14 @@ function renderCharacterBio(data) {
     </section>
   </div>
   `
-  $(".character-bio").removeClass("hide");
+  $(".character-info").removeClass("hide");
   $('.character-bio').html(charHTML);
 }
 
 function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
-    $(".character-bio").addClass("hide");
+    $("character-info").addClass("hide");
     getCharacterData(movieID,getCharacters);
   });
 }
