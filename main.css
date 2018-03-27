@@ -44,14 +44,23 @@ a {
 }
 
 .character {
-  width: 250px;
+  width: 150px;
   height: auto;
+}
+
+figure {
+  position: relative;
 }
 
 figcaption {
   color:inherit;
   text-decoration: none;
   font-family: 'Anton', sans-serif;
+  font-size: 14px;
+  position: absolute;
+  margin: 5px;
+  top: 0;
+  left: 0;
 }
 
 .character-bio {
