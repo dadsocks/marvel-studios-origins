@@ -90,6 +90,9 @@ function getCharacters(data) {
     } else if(name.includes('aka')) {
       let alias = name.split('aka ');
       return alias[alias.length - 1];
+    } else if(name.includes('(')) {
+      let alias = name.split(' (');
+      return alias[0];
     }
     return name;
   });
