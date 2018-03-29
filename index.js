@@ -181,7 +181,7 @@ function renderCharacterBio(data) {
 
 function toggleMovieSelection () {
   $(".movie").click(function(event) {
-    $("header").removeClass("active-movie");
+    $(".movie").removeClass("active-movie");
     $(event.currentTarget).addClass("active-movie");
   });
 }
