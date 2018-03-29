@@ -179,10 +179,18 @@ function renderCharacterBio(data) {
   $('.character-bio').html(charHTML);
 }
 
+function toggleMovieSelection () {
+  $(".movie").click(function(event) {
+    $("header").removeClass("active-movie");
+    $(event.currentTarget).addClass("active-movie");
+  });
+}
+
 function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
     $(".character-info").addClass("hide");
+    toggleMovieSelection();
     getCharacterData(movieID,getCharacters);
   });
 }
