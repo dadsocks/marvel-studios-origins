@@ -66,6 +66,7 @@ function marvelMovieData(data) {
   }).map((result) => renderMovies(result));
 
   $('.movie-list').html(results);
+  toggleMovieSelection();
 }
 
 
@@ -190,7 +191,6 @@ function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
     $(".character-info").addClass("hide");
-    toggleMovieSelection();
     getCharacterData(movieID,getCharacters);
   });
 }
