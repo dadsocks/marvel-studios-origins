@@ -65,10 +65,17 @@ a {
 .movie {
   width: 250px;
   height: auto;
+  margin: 0 2.5px;
+  opacity: .4;
 }
 
 .movie:hover {
   cursor:pointer;
+  opacity: 1;
+}
+
+.movie:active {
+  opacity: 1;
 }
 
 .character {
@@ -78,6 +85,7 @@ a {
 
 figure {
   position: relative;
+  margin: 0 2.5px;
 }
 
 figcaption {
