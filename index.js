@@ -145,13 +145,14 @@ function marvelCharacterData(data,callback) {
 function renderCharacterBio(data) {
   const result = data.data.results[0];
 
-  let bio = result.description;
+  const bio = result.description;
+  console.log(bio);
 
   const bioCheck = function() {
     if(bio === "") {
-      bio = "No Bio Available";
+      return "No Bio Available";
     };
-  }
+  };
 
   charHTML = `
   <div class="character-bio-img">
@@ -162,7 +163,7 @@ function renderCharacterBio(data) {
     <section>
       <p>
         <h4 class="bio-header">Bio:</h4>
-        ${bio}
+        ${bioCheck}
       </p>
     </section>
     <section>
