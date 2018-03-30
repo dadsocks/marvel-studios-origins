@@ -148,7 +148,7 @@ function renderCharacterBio(data) {
   const bio = result.description;
   console.log(bio);
 
-  const bioCheck = function() {
+  const bioCheck = function(bio) {
     if(bio === "") {
       return "No Bio Available";
     };
