@@ -155,7 +155,7 @@ function renderCharacterBio(data) {
 
   charHTML = `
   <div class="character-bio-img">
-    <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character" alt="Thor">
+    <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character-bio-img" alt="Thor">
   </div>
   <div class="character-bio-content col">
     <h3 class="bio-name">${result.name}</h3>

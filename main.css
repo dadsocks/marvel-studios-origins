@@ -83,6 +83,10 @@ a {
   height: auto;
 }
 
+.characters {
+  margin-top: 10px;
+}
+
 figure {
   position: relative;
   margin: 0 2.5px;
@@ -97,6 +101,10 @@ figcaption {
   margin: 5px;
   top: 0;
   left: 0;
+}
+
+.character-info {
+  margin-top: 10px;
 }
 
 .character-bio {
@@ -117,6 +125,11 @@ figcaption {
 
 .bio-header {
   font-family: 'Anton', sans-serif;
+}
+
+.character-bio-img {
+  width: 250px;
+  height: auto;
 }
 
 .character-bio-content {
