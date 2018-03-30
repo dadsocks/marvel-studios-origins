@@ -178,7 +178,7 @@ function renderCharacterBio(data) {
   `
   $(".character-info").removeClass("hide");
   $('.character-bio').html(charHTML);
-  $('.character-bio-img').focus({preventScroll: false});
+  $('.character-info').focus({preventScroll: false});
 }
 
 function toggleMovieSelection () {
