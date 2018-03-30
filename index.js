@@ -142,17 +142,19 @@ function marvelCharacterData(data,callback) {
   callback(characterHTML);
 }
 
+function bioCheck(bio) {
+  if(bio === "") {
+    return "No Bio Available";
+  };
+}
+
 function renderCharacterBio(data) {
   const result = data.data.results[0];
 
   const bio = result.description;
   console.log(bio);
 
-  const bioCheck = function(bio) {
-    if(bio === "") {
-      return "No Bio Available";
-    };
-  };
+  const bioCheck = bioCheck(bio);
 
   charHTML = `
   <div class="character-bio-img">
