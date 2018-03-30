@@ -177,9 +177,8 @@ function renderCharacterBio(data) {
   </div>
   `
   $(".character-info").removeClass("hide");
-  $('.character-info').focus({preventScroll: false});
   $('.character-bio').html(charHTML);
-
+  $('html,body').animate({scrollTop: jQuery(".character-info").offset().top},'slow');
 }
 
 function toggleMovieSelection () {
