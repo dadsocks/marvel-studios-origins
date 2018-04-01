@@ -36,6 +36,12 @@ a {
   flex-direction: column;
   margin-top: 20px;
   padding: 10px;
+  transition: max-height 0.3s ease-out;
+  max-height: 500px;
+}
+
+.collapsed {
+  max-height: 0;
 }
 
 .page-desc h1 {
@@ -148,6 +154,10 @@ figcaption {
 
 .character-bio-content section {
   margin-bottom: 20px;
+}
+
+.visuallyhidden {
+  opacity: 0;
 }
 
 .hide {

@@ -201,6 +201,7 @@ function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
     $(".character-info").addClass("hide");
+    $(".page-desc").addClass("collapsed");
     getCharacterData(movieID,getCharacters);
   });
 }
