@@ -37,6 +37,7 @@ a {
   margin-top: 20px;
   padding: 10px;
   transition: max-height 0.3s ease-out;
+  transition: 0.3s;
   max-height: 500px;
 }
 

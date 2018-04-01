@@ -155,7 +155,7 @@ function renderCharacterBio(data) {
     if(result.description == "") {
       return "No Bio Available";
     }
-    return bio;
+    return result.description;
 
   };
 
