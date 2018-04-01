@@ -198,11 +198,20 @@ function toggleMovieSelection () {
   });
 }
 
+function collapse() {
+  const collapse = $(".page-desc");
+
+  collapse.addClass("collapsed");
+  collapse.one('transitionend', hide => {
+    collapse.addClass("hide");
+  });
+}
+
 function selectMovie() {
   $('.movie-list').on('click','.moviePoster', event => {
     const movieID = $(event.currentTarget).attr('id');
     $(".character-info").addClass("hide");
-    $(".page-desc").addClass("collapsed");
+    collapse();
     getCharacterData(movieID,getCharacters);
   });
 }
