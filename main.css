@@ -43,6 +43,7 @@ a {
 
 .collapsed {
   max-height: 0;
+  opacity: 0;
 }
 
 .page-desc h1 {
