@@ -151,10 +151,13 @@ function bioCheck(bio) {
 function renderCharacterBio(data) {
   const result = data.data.results[0];
 
-  const bio = result.description;
-  console.log(bio);
-
-  const bioCheck = bioCheck(bio);
+  const bio = function() {
+    if(result.description == "") {
+      return "No Bio Available";
+    }
+    return bio;
+    console.log(bio);
+  };
 
   charHTML = `
   <div class="character-bio-img">
@@ -165,7 +168,7 @@ function renderCharacterBio(data) {
     <section>
       <p>
         <h4 class="bio-header">Bio:</h4>
-        ${bioCheck}
+        ${bio}
       </p>
     </section>
     <section>
