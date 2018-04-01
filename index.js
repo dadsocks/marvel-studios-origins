@@ -151,7 +151,7 @@ function bioCheck(bio) {
 function renderCharacterBio(data) {
   const result = data.data.results[0];
 
-  const bio = function() {
+  const bio = function(result) {
     if(result.description == "") {
       return "No Bio Available";
     }
@@ -159,7 +159,7 @@ function renderCharacterBio(data) {
 
   };
 
-  const bioCheck = bio();
+  const bioCheck = bio(result);
   console.log(bioCheck);
 
   charHTML = `
