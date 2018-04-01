@@ -12,6 +12,7 @@ function getMarvelMovieData(callback) {
   $.getJSON(companyMoviesUrl,callback);
 }
 
+
 function getCharacterData(movieId,callback) {
   const charactersUrl = `${TMDB_SEARCH_URL}movie/${movieId}/credits?api_key=a6f231ffb0d29fd46f9500b4b138e82c&language=en-US`;
 

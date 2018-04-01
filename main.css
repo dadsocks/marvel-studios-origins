@@ -37,13 +37,13 @@ a {
   margin-top: 20px;
   padding: 10px;
   transition: max-height 0.3s ease-out;
-  transition: 0.3s;
+  transition: 0.4s;
   max-height: 500px;
 }
 
 .collapsed {
   max-height: 0;
-  opacity: 0;
+  display:none;
 }
 
 .page-desc h1 {
