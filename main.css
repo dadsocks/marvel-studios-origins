@@ -127,6 +127,7 @@ figcaption {
 
 .character-bio {
   display: flex;
+  padding: 0 10px;
   width: 50%;
   /* align-items: center; */
   font-family: 'Anton', sans-serif;
