@@ -188,7 +188,8 @@ function renderCharacterBio(data) {
   `
   $(".character-info").removeClass("hide");
   $('.character-bio').html(charHTML);
-  $('html,body').animate({scrollTop: $(window).scrollTop(jQuery(".character-info").offset().top}),'slow');
+  // $('html,body').animate({scrollTop: $(window).scrollTop(jQuery(".character-info").offset().top}),'slow');
+  $("html, body").scrollTop($(".character-info").offset().top);
 }
 
 function toggleMovieSelection () {
