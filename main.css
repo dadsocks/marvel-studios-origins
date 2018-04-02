@@ -34,7 +34,8 @@ a {
 .page-desc {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  align-items: center;
+  margin-top: 10px;
   padding: 10px;
   transition: max-height 0.3s ease-out;
   transition: 0.4s;
@@ -50,7 +51,7 @@ a {
   font-size: 25px;
   font-family: 'Oswald', sans-serif;
   align-self: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -168,4 +169,38 @@ figcaption {
 
 .hide {
   display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .page-desc h1 {
+    font-size: 18px;
+    }
+
+    .page-desc h2 {
+    font-size: 16px;
+    }
+
+    .movie {
+      width: 175px;
+    }
+
+    .character-bio {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .character-bio-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .character-bio-content {
+      margin: 0;
+      width: 100%;
+    }
+
+
 }
