@@ -121,6 +121,7 @@ function useCleanCharacterNames(characters) {
           $(".character-list").attr('hidden',false);
           $("section.character-list").removeClass("hide");
           $(".character-list").html(marvelCharacterJSON);
+          $("html, body").scrollTop($(".character-list").offset().top);
         }
       });
     });
