@@ -134,7 +134,7 @@ function marvelCharacterData(data,callback) {
     <li>
       <a href="#" id="${result.id}" class="character-img">
         <figure>
-          <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character scroll-item" alt="${result.name}">
+          <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character scroll-item" alt="${result.name} Comic Book Version">
           <figcaption>${result.name}</figcaption>
         </figure>
       </a>
