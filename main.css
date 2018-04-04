@@ -87,6 +87,10 @@ a {
   opacity: 1;
 }
 
+.movie:focus {
+  opacity: 1;
+}
+
 .active-movie {
   opacity: 1;
 }
