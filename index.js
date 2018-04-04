@@ -165,7 +165,7 @@ function renderCharacterBio(data) {
   console.log(bioCheck);
 
   charHTML = `
-  <div class="character-bio-img">
+  <div class="character-bio-img aria-">
     <img src="${result.thumbnail.path}/portrait_uncanny.${result.thumbnail.extension}" class="character-bio-image" alt="Thor">
   </div>
   <div class="character-bio-content col">
@@ -189,7 +189,8 @@ function renderCharacterBio(data) {
   `
   $(".character-info").removeClass("hide");
   $('.character-bio').html(charHTML);
-  $("html, body").scrollTop($(".character-info").offset().top);
+  //$("html, body").scrollTop($(".character-info").offset().top);
+  $(".character-info").focus();
 }
 
 function toggleMovieSelection () {
