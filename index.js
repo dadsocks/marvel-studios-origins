@@ -190,7 +190,7 @@ function renderCharacterBio(data) {
   $(".character-info").removeClass("hide");
   $('.character-bio').html(charHTML);
   //$("html, body").scrollTop($(".character-info").offset().top);
-  $(".character-info").focus();
+  $(".character-bio").focus();
 }
 
 function toggleMovieSelection () {
