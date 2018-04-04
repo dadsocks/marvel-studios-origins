@@ -25,8 +25,7 @@ function getMarvelCharacterData(character,callback) {
     {nameStartsWith: character,
       ts: timestamp,
       apikey: marvelPubAPIKey,
-      hash: hash,
-      characters: characterID
+      hash: hash
     },
     callback);
 }
