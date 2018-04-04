@@ -221,7 +221,7 @@ function selectCharacter() {
   $('.character-list').on('click','.character-img', event => {
     const charID = $(event.currentTarget).attr('id');
     getCharacterDataByID(charID,renderCharacterBio);
-  })
+  });
 }
 
 
