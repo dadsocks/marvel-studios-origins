@@ -220,6 +220,7 @@ function selectMovie() {
 
 function selectCharacter() {
   $('.character-list').on('click','.character-img', event => {
+    event.preventDefault();
     const charID = $(event.currentTarget).attr('id');
     getCharacterDataByID(charID,renderCharacterBio);
   });
