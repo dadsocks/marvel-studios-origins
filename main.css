@@ -23,6 +23,7 @@ a {
   flex-direction: column;
   background-color: #171616;
   border-bottom: .5px solid #272727;
+  padding: 10px;
 }
 
 .Logo-Nav img {
